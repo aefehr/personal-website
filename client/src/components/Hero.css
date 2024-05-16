@@ -2,21 +2,18 @@
 .hero {
     height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: black;
-    text-align: center;
+    justify-content: space-between;
+    text-align: left;
     position: relative;
+    padding: 0 10%; /* Ensure content doesn't touch the edges */
+    overflow: hidden; /* Prevents elements from overflowing the hero section */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.hero .content {
+    z-index: 2; /* Ensures content is on top */
+    position: relative; /* Necessary for z-index to take effect */
+    flex: 1 0 auto; /* Takes necessary space, adjusts basis automatically */
 }
 
 .hero h1 {
@@ -27,24 +24,104 @@
 .hero h2 {
     font-size: 2rem;
     font-weight: normal;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
+.highlight {
+    color: #7C5E8C; /* Sets the color to red */
+    font-weight: bold; /* Makes the text bold */
+}
+
+/* Hero.css */
 .hero .buttons {
     margin-top: 20px;
+    display: flex; /* Keeps buttons in a row */
+    align-items: center; /* Aligns buttons vertically to the center */
+    justify-content: flex-start; /* Aligns buttons to the left */
 }
 
 .hero button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    background-color: #0066cc; /* Primary button color */
+    font-size: 1.3rem; /* Larger font size for better visibility */
+    padding: 23px 70px; /* Larger padding for a bigger button */
     border: none;
-    border-radius: 5px;
-    margin-right: 10px;
+    border-radius: 30px; /* More rounded corners */
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 110px; /* Increased spacing between the buttons */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.hero button:hover {
-    background-color: #0056b3; /* Darken button on hover */
+.hero button:last-child {
+    margin-right: 0; /* Removes margin on the last button to avoid extra space on the right */
 }
+
+.hero button:first-child {
+    color: white; /* White text for the left button */
+    background-color: #7C5E8C; /* Primary button color */
+}
+
+.hero button:last-child {
+    color: black; /* Black text for the right button */
+    background-color: #e9e9e9; /* Light gray background */
+}
+
+.hero button:hover {
+    filter: brightness(90%); /* Slightly darken the button on hover */
+}
+
+/* Adjustments for the circles */
+.hero .circles {
+    display: flex;
+    position: absolute;
+    right: 5%; /* Adjust based on the right padding of hero */
+    top: 50%;
+    transform: translateY(-50%); /* Center circles vertically */
+    z-index: 1; /* Lower z-index to keep circles behind the text */
+}
+
+.hero .circle {
+    width: 250px; /* Default size for the right smaller circle */
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #4E9AC6; /* Orange circle */
+}
+
+.hero .circle1 {
+    width: 400px; /* Larger size for the left circle */
+    height: 400px;
+    background-color: #B0E7EA; /* Red circle */
+    z-index: 3; /* Higher z-index to bring it in front of the other circle */
+}
+
+.hero .circle2 {
+    margin-left: -150px; /* Adjust for overlap based on the larger circle size */
+    z-index: 2;
+    background-color: #4E9AC6; /* Orange circle, behind the red one */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    .hero .circles {
+        position: static;
+        order: -1; /* Moves circles to the top in column layout */
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .hero .circle2 {
+        margin-left: -75px; /* Adjust overlap for smaller screens */
+    }
+}
+
+
+
+
+
