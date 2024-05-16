@@ -2,7 +2,6 @@
 .navbar {
     background-color: white;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,13 +11,31 @@
     color: #333;
     text-decoration: none;
     padding: 10px 15px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .navbar-links {
     display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Allows this block to grow and push social links to the right */
 }
 
-.navbar-links a:hover {
+.navbar-links a:hover, .navbar-links a.active {
     background-color: #f8f8f8;
+    text-decoration: underline; /* Adds underline on hover or when active */
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 1.6rem; /* Larger icons */
+    margin-left: 10px; /* Space between icons */
+}
+
+.social-links a:hover {
+    color: #0077b5; /* Example hover color change for LinkedIn */
 }
