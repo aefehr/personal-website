@@ -1,10 +1,13 @@
 /* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif; /* This can be changed to a font of your choice */
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
+  font-family: 'Montserrat', sans-serif;
 }
 
 main {
