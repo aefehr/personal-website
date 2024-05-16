@@ -1,0 +1,50 @@
+/* Hero.css */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.hero .buttons {
+    margin-top: 20px;
+}
+
+.hero button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #0066cc; /* Primary button color */
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+}
