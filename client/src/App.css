@@ -1,30 +1,23 @@
-/* App.css */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-body, html {
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; /* This can be changed to a font of your choice */
-  background-color: #ffffff;
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  background: radial-gradient(circle, #f3f1f9, #ebe9ef);
+  position: relative;
+  overflow: hidden;
 }
 
-main {
-  padding: 20px;
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png'); /* Noise texture */
+  opacity: 0.1; /* Adjust opacity for subtle graininess */
+  pointer-events: none;
 }
 
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-  padding: 0 10px;
-}
 
 

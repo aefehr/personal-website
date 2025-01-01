@@ -9,7 +9,7 @@ function Hero() {
                 <h2>A computer science and cognitive science student at
                 <br/>the <span class="highlight">University of Pennsylvania</span></h2>
                 <h2>A software engineer intern at <span class="highlight">Yahoo</span></h2>
-                <h2>A software developer at CHOP</h2>
+                <h2>A <span class="highlight">fullstack developer</span> for the Children's Hospital of <br/>Philadelphia</h2>
                 <div className="buttons">
                     <button onClick={() => window.location.href = '#contact'}>Resume</button>
                     <button onClick={() => window.location.href = '#projects'}>Projects</button>
