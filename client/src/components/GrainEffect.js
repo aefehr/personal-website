@@ -52,6 +52,7 @@ const GrainEffect = () => {
 
   return (
     <canvas
+      id="grainCanvas"
       ref={canvasRef}
       style={{
         position: "absolute",

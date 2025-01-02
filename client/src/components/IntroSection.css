@@ -1,0 +1,69 @@
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: transparent;
+    transform: translateY(-10%);
+  }
+  
+  .intro-heading {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1.7px #606887;
+    font-family: sans-serif; 
+    letter-spacing: 2px;
+  }
+  
+  .name-highlight {
+    color: #606887;
+    -webkit-text-stroke: 0;
+    position: relative;   /* Allow absolutely positioned children */
+    display: inline-block;
+    z-index: 1;  
+  }
+
+  .underline-squiggle {
+    position: absolute;
+    z-index: 0;  
+    left: -10%;         /* Shift left so wave extends beyond the name */
+    bottom: -50%;       /* Move it lower, tweak until it lines up */
+    width: 120%;        /* Wider than the text so it peeks out on both sides */
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M0,4 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3'/%3E%3C/svg%3E") repeat-x center / auto 100%;
+    pointer-events: none;
+    opacity: 0.9; 
+}
+
+  .intro-subheading {
+    font-size: 1.25rem;
+    font-weight: 450;
+    color: #606887;
+    margin-top: 0;
+    max-width: 500px;
+  }
+  
+  @-moz-document url-prefix() {
+    .outline-text {
+      -webkit-text-stroke: 0;
+      text-shadow: 
+        1px 1px 0 #606887,
+        -1px -1px 0 #606887,
+        1px -1px 0 #606887,
+        -1px 1px 0 #606887,
+        1px 0 0 #606887,
+        -1px 0 0 #606887,
+        0 1px 0 #606887,
+        0 -1px 0 #606887;
+    }
+  }
+  
