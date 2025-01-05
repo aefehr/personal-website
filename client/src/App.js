@@ -3,21 +3,30 @@ import GrainEffect from './components/GrainEffect';
 import IntroSection from './components/IntroSection';
 import PositionableSphere from './components/PostionableSphere';
 import DonutComponentOne from './components/DonutComponentOne';
+import DonutComponentTwo from './components/DonutComponentTwo';
 
 const App = () => (
-  <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+  <div style={{ position: "relative", width: "100vw", height: "100vh", overflow: "hidden" }}>
+    <div className="scene-container" style={{ position: "relative", width: "100%", height: "100%" }}>
+      <IntroSection />
+      
+      <PositionableSphere position="top-left" size="large" color="#FFB3C2" />
+      
+      <DonutComponentOne 
+        position="bottom-right"
+        size="large"
+        color="#78FFD1"
+      />
+      
+      <DonutComponentTwo 
+        position="top-right"
+        size="large"
+        color="#FFB3C2"
+      />
+    </div>
+    
+    {/* Grain effect overlay */}
     <GrainEffect />
-
-    <IntroSection />
-
-    <PositionableSphere position="top-left" size="large" color="#FFB3C2" />
-    
-    <DonutComponentOne 
-      position="bottom-right"
-      size="large"
-      color="#78FFD1"
-    />
-    
   </div>
 );
 

@@ -1,51 +1,52 @@
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
+import { Canvas, useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 
-const Donut = ({ color = "#8DF1FF" }) => {
+const Donut = ({ color = '#FFB3C2' }) => {
   const groupRef = useRef();
 
   useFrame(({ clock }) => {
     if (groupRef.current) {
-      // Keep the gentle z-axis animation
-      groupRef.current.rotation.z = Math.sin(clock.elapsedTime * 0.5) * 0.1 + -Math.PI;
+      // Set the base rotation to -Math.PI/2 (90 degrees counterclockwise)
+      // and add the animation on top
+      groupRef.current.rotation.z = -Math.PI/2 + Math.sin(clock.elapsedTime * 0.5) * 0.1;
     }
   });
 
   const torusRadius = 1;
   const tubeRadius = 0.4;
-  const arc = 1.5 * Math.PI;
+  const arc = 1.4 * Math.PI; // Maintain the wider opening
 
   const cap1Pos = [torusRadius, 0, 0];
   const cap2Pos = [
     Math.cos(arc) * torusRadius,
     Math.sin(arc) * torusRadius,
-    0
+    0,
   ];
 
   const gradientTexture = new THREE.DataTexture(
-    new Uint8Array(3),
-    1,
-    1,
-    THREE.RGBFormat
-  );
-  gradientTexture.needsUpdate = true;
+      new Uint8Array(3),
+      1,
+      1,
+      THREE.RGBFormat
+    );
+    gradientTexture.needsUpdate = true;
 
   const material = new THREE.MeshStandardMaterial({
-    roughness: 0.3,
-    metalness: 0.1,
-    side: THREE.DoubleSide,
-    color: color,
-    emissive: color,
-    emissiveIntensity: 0.1,
-    gradientMap: gradientTexture,
-  });
+      roughness: 0.1,
+      metalness: 0.1,
+      side: THREE.DoubleSide,
+      color: color,
+      emissive: color,
+      emissiveIntensity: 0.3,
+      gradientMap: gradientTexture,
+    });
 
   return (
-    <group 
-      ref={groupRef} 
+    <group
+      ref={groupRef}
       scale={2}
-      rotation={[0, 0, -Math.PI]} // Rotate 180 degrees counter-clockwise
+      // Remove the rotation here since we're handling it in useFrame
     >
       <mesh material={material}>
         <torusGeometry args={[torusRadius, tubeRadius, 64, 64, arc]} />
@@ -60,21 +61,19 @@ const Donut = ({ color = "#8DF1FF" }) => {
   );
 };
 
-const DonutComponentOne = ({ 
-  position = 'bottom-right',
+const DonutComponentTwo = ({
+  position = 'top-right',
   size = 'medium',
-  color = '#8DF1FF',
-  rotation = 0,
-  customPosition = null 
+  color = '#FFB3C2',
+  customPosition = null,
 }) => {
-
   const style = {
     position: 'absolute',
-    width: '750px',  // Increased width
-    height: '750px', // Increased height
-    bottom: '-250px', // Push down to go offscreen
-    right: '-130px',
-    zIndex: 1
+    width: '750px',
+    height: '750px',
+    top: '-420px',
+    right: '-30px',
+    zIndex: 1,
   };
 
   return (
@@ -88,4 +87,8 @@ const DonutComponentOne = ({
   );
 };
 
-export default DonutComponentOne;
+export default DonutComponentTwo;
+
+
+
+

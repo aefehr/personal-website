@@ -58,7 +58,7 @@ const GrainEffect = () => {
         position: "absolute",
         top: 0,
         left: 0,
-        zIndex: 0,
+        zIndex: 10,
         pointerEvents: "none",
       }}
     />
