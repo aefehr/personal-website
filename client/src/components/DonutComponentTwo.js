@@ -14,7 +14,7 @@ const Donut = ({ color = '#FFB3C2' }) => {
   });
 
   const torusRadius = 1;
-  const tubeRadius = 0.4;
+  const tubeRadius = 0.41;
   const arc = 1.4 * Math.PI; // Maintain the wider opening
 
   const cap1Pos = [torusRadius, 0, 0];
