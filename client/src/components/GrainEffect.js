@@ -27,7 +27,7 @@ const GrainEffect = () => {
         data[i] = gray; // Red
         data[i + 1] = gray; // Green
         data[i + 2] = gray; // Blue
-        data[i + 3] = 15; // Reduced Alpha (opacity)
+        data[i + 3] = 20; // Reduced Alpha (opacity)
       }
 
       ctx.putImageData(imageData, 0, 0);

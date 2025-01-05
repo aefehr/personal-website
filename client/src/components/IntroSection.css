@@ -6,7 +6,7 @@
     min-height: 100vh;
     text-align: center;
     background-color: transparent;
-    transform: translateY(-10%);
+    transform: translateY(-7%);
   }
   
   .intro-heading {
@@ -51,6 +51,49 @@
     margin-top: 0;
     max-width: 500px;
   }
+
+  .intro-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-family: sans-serif;
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #606887;
+    font-size: 1.25rem;
+    font-weight: 500;
+    position: relative; /* Required for ::after positioning */
+    overflow: hidden; /* To hide the underline during animation */
+    transition: color 0.3s;
+  }
+  
+  .link:hover {
+    color: #8D99AE; /* Optional hover effect */
+  }
+  
+  .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0px; /* Position underline at the bottom of the link */
+    left: 0;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #606887; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth animation for the underline */
+  }
+  
+  .link:hover::after {
+    width: 100%; /* Full underline on hover */
+  }
+  
+  .arrow {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }  
   
   @-moz-document url-prefix() {
     .outline-text {
