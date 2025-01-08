@@ -72,7 +72,7 @@ const DonutComponentTwo = ({
     width: '750px',
     height: '750px',
     top: '-420px',
-    right: '-30px',
+    right: '-90px',
     zIndex: 1,
   };
 

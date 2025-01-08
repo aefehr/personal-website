@@ -3,11 +3,14 @@ import DonutComponentOne from '.././components/DonutComponentOne';
 import DonutComponentTwo from '.././components/DonutComponentTwo';
 import DonutComponentThree from '.././components/DonutComponentThree';
 import SphereComponent from '../components/Sphere';
+import SpinningFlatDonut from '../components/SpinningFlatDonut';
 
 const Home = () => (
   <div style={{ position: "relative", width: "100vw", height: "100vh", overflow: "hidden" }}>
     <div className="scene-container" style={{ position: "relative", width: "100%", height: "100%" }}>
       <IntroSection />
+
+      <SpinningFlatDonut />
       
       <DonutComponentOne 
         position="bottom-right"
