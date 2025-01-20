@@ -49,8 +49,8 @@ const Donut = ({ color = "#ffffa6" }) => {
 const SpinningFlatDonut = () => {
   const containerStyle = {
     position: 'fixed',
-    top: '-300px',
-    left: '-200px',
+    top: '-350px',
+    left: '-250px',
     width: '700px',
     height: '700px',
     zIndex: 1,
