@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .intro-section {
     display: flex;
     flex-direction: column;
@@ -6,38 +8,47 @@
     min-height: 100vh;
     text-align: center;
     background-color: transparent;
-    transform: translateY(-7%);
+    transform: translateY(-6%);
   }
   
   .intro-heading {
-    font-size: 2.7rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.9rem;
+    font-weight: 800;
+    margin-bottom: 0.1rem;
     line-height: 1.2;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    white-space: nowrap;
+  }
+
+  .rounded {
+    font-family: "Quicksand", sans-serif; 
   }
   
   .outline-text {
     color: transparent;
-    -webkit-text-stroke: 1.7px #606887;
-    font-family: sans-serif; 
-    letter-spacing: 2px;
+    -webkit-text-stroke: 2px #606887;
   }
   
   .name-highlight {
-    color: #606887;
-    -webkit-text-stroke: 0;
-    position: relative;   /* Allow absolutely positioned children */
+    position: relative;
     display: inline-block;
-    z-index: 1;  
+    color: #606887;
+    z-index: 1;
+  }
+  
+  /* Adjust spacing between stretched letters */
+  .name-highlight span {
+    margin: 0 2px; /* Fine-tune this value as needed */
   }
 
   .underline-squiggle {
     position: absolute;
     z-index: 0;  
-    left: -10%;         /* Shift left so wave extends beyond the name */
-    bottom: -50%;       /* Move it lower, tweak until it lines up */
-    width: 120%;        /* Wider than the text so it peeks out on both sides */
+    left: -10%;         
+    bottom: -50%;       
+    width: 120%;        
     height: 100px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M0,4 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3'/%3E%3C/svg%3E") repeat-x center / auto 100%;
     pointer-events: none;
@@ -45,27 +56,34 @@
 }
 
   .intro-subheading {
-    font-size: 1.25rem;
-    font-weight: 450;
+    font-size: 1.20rem;
+    font-weight: 570;
     color: #606887;
     margin-top: 0;
     max-width: 500px;
+    font-family: 'Quicksand', serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-bottom: 0.7rem;
   }
 
   .intro-links {
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
-    font-family: sans-serif;
+    font-family: 'Quicksand', serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.20rem;
+    font-weight: 570;
+    color: #606887;
   }
   
   .link {
     display: flex;
+    color: #606887;
     align-items: center;
     text-decoration: none;
-    color: #606887;
-    font-size: 1.25rem;
-    font-weight: 500;
     position: relative; /* Required for ::after positioning */
     overflow: hidden; /* To hide the underline during animation */
     transition: color 0.3s;
@@ -78,16 +96,16 @@
   .link::after {
     content: "";
     position: absolute;
-    bottom: 0px; /* Position underline at the bottom of the link */
+    bottom: 0px; 
     left: 0;
-    width: 0%; /* Start with no underline */
-    height: 2px; /* Thickness of the underline */
-    background-color: #606887; /* Color of the underline */
-    transition: width 0.3s ease; /* Smooth animation for the underline */
+    width: 0%; 
+    height: 2px; 
+    background-color: #606887; 
+    transition: width 0.3s ease; 
   }
   
   .link:hover::after {
-    width: 100%; /* Full underline on hover */
+    width: 100%; 
   }
   
   .arrow {
