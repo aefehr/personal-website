@@ -1,0 +1,52 @@
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #606887;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, width, height, background-color;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+}
+  
+.cursor-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #606887;
+    border-radius: 50%;
+    position: relative;
+    transform: translate(0px, 0px);
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+  
+.custom-cursor.cursor-hover {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(96, 104, 135, 0.4); 
+    border: none;
+}
+  
+.custom-cursor.cursor-hover .cursor-dot {
+    opacity: 0; 
+}
+  
+.cursor-dot.dot-hidden {
+    opacity: 0; 
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
