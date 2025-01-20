@@ -8,7 +8,7 @@ const IntroSection = () => {
     <section className="intro-section">
       <h1 className="intro-heading">
         <span className="outline-text">HI<span class="rounded">,</span> MY NAME IS </span>
-        <span className="name-highlight"> ALLIE</span>
+        <span className="name-highlight"> ALLIE FEHR</span>
       </h1>
       <h2 className="intro-subheading">
         I'm a senior at the University of Pennsylvania, data structures and algorithms tutor, &amp; previous software engineer intern at Yahoo 

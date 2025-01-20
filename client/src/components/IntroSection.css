@@ -18,7 +18,7 @@
     margin-bottom: 0.1rem;
     line-height: 1.2;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2.2px;
     white-space: nowrap;
   }
 
@@ -38,9 +38,8 @@
     z-index: 1;
   }
   
-  /* Adjust spacing between stretched letters */
   .name-highlight span {
-    margin: 0 2px; /* Fine-tune this value as needed */
+    margin: 0 2px; 
   }
 
   .underline-squiggle {
