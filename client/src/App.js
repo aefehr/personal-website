@@ -6,17 +6,16 @@ import About from './pages/About';
 import GrainEffect from './components/GrainEffect';
 
 const App = () => (
-  <div>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/About" element={<About />} />
-      </Routes>
-    </Router>
-
-    <GrainEffect />
-  </div>
+  <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <GrainEffect />
+    </div>  
+  </Router>
 );
 
 export default App;

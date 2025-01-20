@@ -7,32 +7,24 @@ import SpinningFlatDonut from '../components/SpinningFlatDonut';
 
 const Home = () => (
   <div style={{ position: "relative", width: "100vw", height: "100vh", overflow: "hidden" }}>
-    <div className="scene-container" style={{ position: "relative", width: "100%", height: "100%" }}>
-      <IntroSection />
-
-      <SpinningFlatDonut />
-      
+    <div style={{ position: "absolute", width: "100%", height: "100%", pointerEvents: "none" }}>
       <DonutComponentOne 
-        position="bottom-right"
-        size="large"
-        color="#78FFD1"
+          color="#78FFD1"
       />
-      
+      <SpinningFlatDonut />
       <DonutComponentTwo 
-        position="top-right"
-        size="large"
-        color="#FFB3C2"
+          color="#FFB3C2"
       />
 
-        <SphereComponent />
+      <SphereComponent />
 
-        <DonutComponentThree 
-            position="bottom-left"
-            size="large"
-            color="#A7C7E7" 
-        />
+      <DonutComponentThree 
+          color="#A7C7E7" 
+      />
     </div>
-    
+    <div style={{ position: "relative", zIndex: 2 }}>
+      <IntroSection />
+    </div>
   </div>
 );
 

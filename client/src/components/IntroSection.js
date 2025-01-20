@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./IntroSection.css"; 
 
@@ -13,14 +14,14 @@ const IntroSection = () => {
         I'm a senior at the University of Pennsylvania, data structures and algorithms tutor, &amp; previous software engineer intern at Yahoo 
       </h2>
       <div className="intro-links">
-        <a href="/projects" className="link">
+        <Link to="/projects" className="link">
           <ArrowForwardIcon className="arrow" />
           <span className="text">see my projects</span>
-        </a>
-        <a href="/about" className="link">
+        </Link>
+        <Link to="/about" className="link">
           <ArrowForwardIcon className="arrow" />
-          <span className="text">more about me</span>
-        </a>
+          <span>more about me</span>
+        </Link>
       </div>
     </section>
   );

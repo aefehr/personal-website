@@ -70,10 +70,11 @@ const DonutComponentOne = ({
 
   const style = {
     position: 'absolute',
-    width: '750px',  // Increased width
-    height: '750px', // Increased height
-    bottom: '-250px', // Push down to go offscreen
-    right: '-130px',
+    width: '750px',
+    height: '750px',
+    bottom: '-250px', // Adjusted for DonutComponentOne
+    right: '-130px',  // Adjusted for DonutComponentOne
+    pointerEvents: 'none', // Add this line
     zIndex: 1
   };
 
