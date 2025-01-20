@@ -8,14 +8,14 @@
     min-height: 100vh;
     text-align: center;
     background-color: transparent;
-    transform: translateY(-6%);
+    transform: translateY(-4%);
   }
   
   .intro-heading {
     font-family: "Poppins", sans-serif;
     font-size: 2.9rem;
     font-weight: 800;
-    margin-bottom: 0.1rem;
+    margin-bottom: .3rem;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 2.2px;

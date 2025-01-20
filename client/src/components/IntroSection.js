@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import "./IntroSection.css"; 
+import Socials from "./Socials";
 
 const IntroSection = () => {
   return (
@@ -23,6 +24,7 @@ const IntroSection = () => {
           <span>more about me</span>
         </Link>
       </div>
+      <Socials />
     </section>
   );
 };
