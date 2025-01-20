@@ -17,7 +17,7 @@ const IntroSection = () => {
           <ArrowForwardIcon className="arrow" />
           <span className="text">see my projects</span>
         </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="link">
+        <a href="/about" className="link">
           <ArrowForwardIcon className="arrow" />
           <span className="text">more about me</span>
         </a>
