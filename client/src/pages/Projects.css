@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.projects-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: #606887;
+    transform: translateY(24%);
+}
+
+.projects-left {
+    flex: 1;
+}
+
+.projects-right {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 2px solid
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', serif;
+}
+
+.projects-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid;
+    gap: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.project-arrow {
+    position: absolute;
+    left: 0; /* Align arrow to the far left */
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #606887;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projects-item.hovered .project-arrow {
+    opacity: 1;
+}
+
+.project-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    position: relative;
+    left: 0; /* Align to the very left of the line */
+    transition: left 0.3s ease;
+}
+
+.projects-item.hovered .project-name {
+    left: 30px; /* Shift project name to make room for the arrow */
+}
+
+.project-type {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: auto; /* Align project type to the far right */
+}
+
+
+
+
+  
