@@ -2,7 +2,7 @@ import React from 'react';
 import './Socials.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const Socials = () => {
   return (
@@ -14,7 +14,7 @@ const Socials = () => {
         <LinkedInIcon fontSize="inherit" />
       </a>
       <a href="mailto:fehr.allie@gmail.com">
-        <EmailIcon fontSize="inherit" />
+        <MailOutlineIcon fontSize="inherit" />
       </a>
     </div>
   );
