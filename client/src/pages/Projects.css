@@ -11,11 +11,36 @@
 
 .projects-left {
     flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 70px;
+    margin-right: 10px;
+    overflow: hidden;
+    border-top-right-radius: 50px;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.project-image.visible {
+    opacity: 1;
 }
 
 .projects-right {
     flex: 1;
     padding: 50px 40px;
+    margin-right: 120px;
+    max-width: 38%;
     display: flex;
     flex-direction: column;
 }
@@ -44,12 +69,12 @@
     padding: 20px 0;
     border-bottom: 2px solid;
     gap: 20px;
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    transition: all 0.3s ease; 
 }
 
 .project-arrow {
     position: absolute;
-    left: 0; /* Align arrow to the far left */
+    left: 0; 
     opacity: 0;
     display: flex;
     align-items: center;
@@ -66,18 +91,22 @@
     font-size: 1.5rem;
     font-weight: 800;
     position: relative;
-    left: 0; /* Align to the very left of the line */
+    left: 0; 
     transition: left 0.3s ease;
 }
 
 .projects-item.hovered .project-name {
-    left: 30px; /* Shift project name to make room for the arrow */
+    left: 30px; 
 }
 
 .project-type {
     font-size: 1rem;
     font-weight: 500;
-    margin-left: auto; /* Align project type to the far right */
+    margin-left: auto; 
+}
+
+.projects-item:last-child {
+    border-bottom: none;
 }
 
 
