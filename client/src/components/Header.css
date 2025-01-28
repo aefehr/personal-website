@@ -1,0 +1,59 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5.7rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 1000;
+    box-sizing: border-box;
+    min-height: 80px; 
+}
+
+.left-part {
+    font-size: 2.9rem;
+    font-weight: 800; 
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 2.2px;
+    color: transparent;
+    -webkit-text-stroke: 2px #606887;
+}
+
+.right-part {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    position: relative; 
+    visibility: visible; 
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px; 
+    position: relative;
+    z-index: 1001;
+}
+
+.icons-style {
+    fill: none;
+    stroke: #606887;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+
+

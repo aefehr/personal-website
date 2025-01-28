@@ -5,11 +5,13 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import GrainEffect from './components/GrainEffect';
 import Cursor from './components/Cursor';
+import Header from './components/Header';
 
 const App = () => (
   <Router>
       <div>
         <Cursor />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
