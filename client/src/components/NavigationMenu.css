@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #f3f2f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 22%;
+    padding-top: 27px;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    z-index: 9;
+}
+
+.nav-menu.active {
+    transform: translateY(0);
+}
+
+.nav-item {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #606887;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.nav-number {
+    font-size: 1.05rem;
+    margin-right: 10px;
+    padding-bottom: 1.6rem; 
+    font-family: 'Quicksand', serif;
+    font-weight: 500;
+    color: #606887;
+}
+
+.nav-text {
+    display: inline-block;
+    transition: transform 0.3s ease; 
+    transform-origin: left center; 
+}
+
+.nav-item:hover .nav-text {
+    transform: scale(1.05); 
+}
