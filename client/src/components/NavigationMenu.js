@@ -5,6 +5,7 @@ import './NavigationMenu.css';
 const NavigationMenu = ({ isOpen, onClose }) => {
     return (
       <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
+        {/* Main navigation links */}
         <Link to="/" className="nav-item" onClick={onClose}>
           <span className="nav-number">01</span>
           <span className="nav-text">HOME</span>
@@ -21,8 +22,18 @@ const NavigationMenu = ({ isOpen, onClose }) => {
           <span className="nav-number">04</span>
           <span className="nav-text">CONTACT</span>
         </Link>
+
+        {/* Social Media Links */}
+        <div className="nav-social-links">
+          <a href="https://linkedin.com/in/allie-fehr" className="link" target="_blank" rel="noopener noreferrer">
+            <span className="arrow">↗</span> linkedin
+          </a>
+          <a href="https://github.com/aefehr" className="link" target="_blank" rel="noopener noreferrer">
+            <span className="arrow">↗</span> github
+          </a>
+        </div>
       </nav>
     );
 };
-  
+
 export default NavigationMenu;

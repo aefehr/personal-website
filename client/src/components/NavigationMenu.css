@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+/* Navigation menu */
 .nav-menu {
     position: fixed;
     top: 0;
@@ -31,6 +31,7 @@
     display: flex;
     align-items: flex-end;
     cursor: pointer;
+    margin-bottom: -1rem;
 }
 
 .nav-number {
@@ -51,3 +52,46 @@
 .nav-item:hover .nav-text {
     transform: scale(1.05); 
 }
+
+/* 🔹 Adjusted social media links */
+.nav-social-links {
+    margin-top: 2.5rem; /* Reduce space between last menu item and social links */
+    padding-left: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Apply same styling as contact page links */
+.link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    color: #606887;
+    padding-bottom: 2px;
+    font-size: 1.5rem;
+    font-weight: 370;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #606887;
+    transition: width 0.4s ease;
+    pointer-events: none;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.arrow {
+    margin-right: 0.4rem;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
