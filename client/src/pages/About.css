@@ -1,76 +1,97 @@
-/* Container */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.about-page {
+  background: radial-gradient(circle at 35% 60%, rgba(100, 200, 150, 0.4) 0%, rgba(255, 255, 255, 0) 40%), 
+                radial-gradient(circle at 60% 50%, rgba(100, 150, 255, 0.4) 0%, rgba(255, 255, 255, 0) 30%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .about-container {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #d9e4f5, #ffffff);
-  }
-  
-  /* Left Section */
-  /* Left Section */
-.about-left {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: #4a4a4a;
-  }
-  
-  .about-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #4a4a4a;
-    position: relative;
-  }
-  
-  .about-title::after {
-    content: "";
-    display: block;
-    width: 100%; /* Full width of the left section */
-    height: 2px;
-    background-color: #4a4a4a;
-    margin-top: 10px;
-    position: absolute;
-    left: 0; /* Aligns underline with the start of the left section */
-  }
-  
-  
-  
-  .about-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 450px;
-    margin-bottom: 40px;
-  }
-  
-  .resume-link {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #4a4a4a;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .resume-link:hover {
-    color: #1d74f5;
-  }
-  
-  /* Right Section */
-  .about-right {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px 0 0 40px;
-    margin-left: 20px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; /* Full width */
+  height: 100vh;
+  padding: 0 .1vw; /* Adds spacing on left and right */
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  gap: 3vw; /* Ensures space between text and image */
+  flex-wrap: wrap; /* Ensures responsive behavior */
+}
+
+/* Left Content - Expands More to the Right */
+.about-content {
+  flex: 1;  /* Allows it to expand */
+  min-width: 40%; /* Prevents shrinking too much */
+  max-width: 55vw; /* Ensures it doesn’t get too wide */
+  padding-left: 16vw;
+  color: #606887;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Underline Divider */
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: #606887;
+  margin-bottom: 1.5rem;
+}
+
+/* Description Text */
+.about-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-family: 'Quicksand', serif;
+  font-weight: 570;
+}
+
+/* Resume Link */
+.resume-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-family: 'Quicksand', serif;
+  font-weight: 570;
+  color: #606887;
+}
+
+
+/* Right Image Section */
+.about-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24vw;  /* Adjust width to match reference */
+  height: 78vh; /* Ensures image height matches reference */
+  display: flex;
+  align-items: flex-start;
+  z-index: 800;
+}
+
+/* Image Styling */
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 0 40px; /* No rounding on top left, only bottom left */
+}
+
+
+
+
+
+
   
   
