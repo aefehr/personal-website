@@ -11,6 +11,13 @@
     z-index: 1000;
     box-sizing: border-box;
     min-height: 80px; 
+    pointer-events: none;
+}
+
+.header button,
+.header a,
+.header .initials {
+    pointer-events: auto;
 }
 
 .left-part {
