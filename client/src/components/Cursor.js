@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom"; // Import useLocation hook
 import "./Cursor.css";
 
 const Cursor = () => {
   const cursorRef = useRef(null);
   const dotRef = useRef(null);
   const resetTimeout = useRef(null);
-  const isHovering = useRef(false); 
+  const isHovering = useRef(false);
+  const location = useLocation(); // Track current route
 
   useEffect(() => {
     let lastX = 0;
@@ -13,13 +15,10 @@ const Cursor = () => {
 
     const moveCursor = (e) => {
       const { clientX, clientY } = e;
-
       const offset = isHovering.current ? 25 : 12;
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${clientX - offset}px, ${
-          clientY - offset
-        }px)`;
+        cursorRef.current.style.transform = `translate(${clientX - offset}px, ${clientY - offset}px)`;
       }
 
       const dx = clientX - lastX;
@@ -31,14 +30,13 @@ const Cursor = () => {
       const dotY = (dy / distance || 0) * Math.min(distance, maxDistance);
 
       if (dotRef.current) {
-        dotRef.current.style.transition = ""; 
+        dotRef.current.style.transition = "";
         dotRef.current.style.transform = `translate(${dotX}px, ${dotY}px)`;
       }
 
       lastX = clientX;
       lastY = clientY;
 
-      // Clear timeout
       if (resetTimeout.current) {
         clearTimeout(resetTimeout.current);
       }
@@ -52,7 +50,7 @@ const Cursor = () => {
     };
 
     const handleHover = () => {
-      isHovering.current = true; 
+      isHovering.current = true;
       if (cursorRef.current) {
         cursorRef.current.classList.add("cursor-hover");
       }
@@ -78,30 +76,41 @@ const Cursor = () => {
       }
     };
 
+    // Attach event listeners
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseout", resetDotPosition);
 
-    // Add hover listeners for links
-    const links = document.querySelectorAll("a, .link");
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", handleHover);
-      link.addEventListener("mouseleave", handleUnhover);
-    });
+    // Reattach hover listeners every time the route changes
+    const attachHoverListeners = () => {
+      const links = document.querySelectorAll(
+        "a, .link, .link span, .intro-links a, .contact-info a, .contact-info .arrow"
+      );
+
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", handleHover);
+        link.addEventListener("mouseleave", handleUnhover);
+      });
+
+      return () => {
+        links.forEach((link) => {
+          link.removeEventListener("mouseenter", handleHover);
+          link.removeEventListener("mouseleave", handleUnhover);
+        });
+      };
+    };
+
+    const cleanupHoverListeners = attachHoverListeners();
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseout", resetDotPosition);
-
-      links.forEach((link) => {
-        link.removeEventListener("mouseenter", handleHover);
-        link.removeEventListener("mouseleave", handleUnhover);
-      });
+      cleanupHoverListeners(); // Remove event listeners when unmounting
 
       if (resetTimeout.current) {
         clearTimeout(resetTimeout.current);
       }
     };
-  }, []);
+  }, [location.pathname]); // Runs every time route changes
 
   return (
     <>
@@ -113,6 +122,7 @@ const Cursor = () => {
 };
 
 export default Cursor;
+
 
 
 
