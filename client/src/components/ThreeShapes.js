@@ -54,7 +54,7 @@ const ThreeShapes = () => {
         color, 
         side: THREE.DoubleSide,
         emissive: color,
-        emissiveIntensity: 0.7,
+        emissiveIntensity: 0.82,
       });
       const torus = new THREE.Mesh(torusGeometry, torusMaterial);
       group.add(torus);
@@ -71,7 +71,7 @@ const ThreeShapes = () => {
         color,
         shininess: 0,
         emissive: color,
-        emissiveIntensity: 0.7
+        emissiveIntensity: 0.82
       });
       
       const cap1 = new THREE.Mesh(sphereGeometry, sphereMaterial);
@@ -182,11 +182,11 @@ const ThreeShapes = () => {
 
       // Base subtle floating animation
       greenDonut.position.y += Math.sin(Date.now() * 0.0009) * 0.001;
-      sphere.position.y += Math.sin(Date.now() * 0.0008) * 0.001;
+      sphere.position.y += Math.sin(Date.now() * 0.0008) * 0.003;
       threeQuarter.rotation.z = Math.PI * -1.10 + Math.sin(Date.now() * 0.0006) * 0.12;
       threeQuarter.position.y = -3.2;
-      purpleDonut.rotation.z = Math.PI * -0.4 + Math.sin(Date.now() * 0.0006) * 0.03;
-      yellowDonut.rotation.z = Math.PI * -0.65 + Math.sin(Date.now() * 0.0006) * 0.04;
+      purpleDonut.rotation.z = Math.PI * -0.4 + Math.sin(Date.now() * 0.0006) * 0.05;
+      yellowDonut.rotation.z = Math.PI * -0.65 + Math.sin(Date.now() * 0.0006) * 0.05;
 
       renderer.render(scene, camera);
     };
