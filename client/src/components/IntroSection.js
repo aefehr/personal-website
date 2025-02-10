@@ -12,7 +12,8 @@ const IntroSection = () => {
         <span className="name-highlight"> ALLIE FEHR</span>
       </h1>
       <h2 className="intro-subheading">
-        I'm a senior at the University of Pennsylvania, data structures and algorithms tutor, &amp; previous software engineer intern at Yahoo 
+        I'm a previous software engineer intern at Yahoo, 
+        computer science &amp; cognitive science student at the University of Pennsylvania, &amp; computer science tutor
       </h2>
       <div className="intro-links">
         <Link to="/projects" className="link">
@@ -21,7 +22,7 @@ const IntroSection = () => {
         </Link>
         <Link to="/about" className="link">
           <ArrowForwardIcon className="arrow" />
-          <span>more about me</span>
+          <span className="text">more about me</span>
         </Link>
       </div>
     </section>
