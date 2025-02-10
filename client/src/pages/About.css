@@ -1,60 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 .about-page {
-  background: radial-gradient(circle at 35% 60%, rgba(100, 200, 150, 0.4) 0%, rgba(255, 255, 255, 0) 40%), 
-                radial-gradient(circle at 60% 50%, rgba(100, 150, 255, 0.4) 0%, rgba(255, 255, 255, 0) 30%);
+  background: radial-gradient(circle at 35% 60%, rgba(181, 255, 217, 0.6) 0%, rgba(255, 255, 255, 0) 30%), 
+                radial-gradient(circle at 60% 50%, rgba(176, 204, 253, 0.6) 0%, rgba(255, 255, 255, 0) 20%);
   background-size: cover;
   background-attachment: fixed;
+  height: 100vh;
+  overflow: hidden; /* Prevent page-level scroll */
 }
 
 .about-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100vw; /* Full width */
+  width: 100vw;
   height: 100vh;
-  padding: 0 .1vw; /* Adds spacing on left and right */
+  padding: 0 .1vw;
   font-family: Arial, sans-serif;
   position: relative;
-  overflow: hidden;
-  gap: 3vw; /* Ensures space between text and image */
-  flex-wrap: wrap; /* Ensures responsive behavior */
+  gap: 3vw;
+  flex-wrap: wrap;
 }
 
-/* Left Content - Expands More to the Right */
+/* Left Content */
 .about-content {
-  flex: 1;  /* Allows it to expand */
-  min-width: 40%; /* Prevents shrinking too much */
-  max-width: 55vw; /* Ensures it doesn’t get too wide */
+  flex: 1;
+  min-width: 40%;
+  max-width: 55vw;
   padding-left: 16vw;
   color: #606887;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section that stays fixed */
+.header-section {
+  padding-top: 25vh;
 }
 
 .about-title {
   font-size: 3rem;
   font-weight: 800;
   font-family: "Poppins", sans-serif;
+  margin-bottom: .3rem;
 }
 
-/* Underline Divider */
 .underline {
   width: 100%;
   height: 2px;
   background-color: #606887;
-  margin-bottom: 1.5rem;
+  margin-bottom: .2rem;
 }
 
-/* Description Text */
+/* Scrollable content section */
+.content-section {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 2rem; /* Add some padding for the scrollbar */
+}
+
 .about-description {
   font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.3;
   font-family: 'Quicksand', serif;
   font-weight: 570;
+  max-width: 85%;
+  margin-bottom: 1rem;
 }
 
-/* Resume Link */
-.resume-link {
+.link {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -65,29 +79,70 @@
   font-family: 'Quicksand', serif;
   font-weight: 570;
   color: #606887;
+  position: relative;
 }
 
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #606887;
+  transition: width 0.4s ease;
+  pointer-events: none;
+  font-weight: 570; 
+}
+
+.link:hover::after {
+  width: 100%;
+}
 
 /* Right Image Section */
 .about-image {
-  position: absolute;
+  position: sticky;
   top: 0;
   right: 0;
-  width: 24vw;  /* Adjust width to match reference */
-  height: 78vh; /* Ensures image height matches reference */
+  width: 24vw;
+  height: 78vh;
   display: flex;
   align-items: flex-start;
-  z-index: 800;
+  z-index: 11;
 }
 
-/* Image Styling */
 .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0 0 0 40px; /* No rounding on top left, only bottom left */
+  border-radius: 0 0 0 40px;
 }
 
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+  
+  .about-content {
+    padding-left: 1rem;
+    max-width: 100%;
+  }
+  
+  .header-section {
+    padding-top: 2rem;
+  }
+  
+  .content-section {
+    padding-right: 1rem;
+  }
+  
+  .about-image {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+}
 
 
 
