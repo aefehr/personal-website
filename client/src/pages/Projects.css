@@ -34,6 +34,7 @@
 
 .project-image.visible {
     opacity: 1;
+    z-index: 99;
 }
 
 .projects-right {
@@ -70,6 +71,8 @@
     border-bottom: 2px solid;
     gap: 20px;
     transition: all 0.3s ease; 
+    text-decoration: none; /* Removes the default underline */
+    color: inherit;
 }
 
 .project-arrow {
@@ -108,6 +111,9 @@
 .projects-item:last-child {
     border-bottom: none;
 }
+
+
+
 
 
 

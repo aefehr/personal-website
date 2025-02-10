@@ -10,9 +10,24 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
-    { name: "budget buddy", type: "TypeScript, React", image: budgetBuddyImg },
-    { name: "chop lab manager", type: "Python, SQLite, PySide", image: chopLabManagerImg },
-    { name: "move wise", type: "JavaScript, Node.js (Express.js), Python, SQL, MySQL", image: moveWiseImg },
+    { 
+      name: "budget buddy", 
+      type: "TypeScript, React", 
+      image: budgetBuddyImg,
+      github: "https://github.com/aefehr/budget-buddy" // Replace with actual repo link
+    },
+    { 
+      name: "chop lab manager", 
+      type: "Python, SQLite, PySide", 
+      image: chopLabManagerImg,
+      github: "https://github.com/aefehr/CHOP-Flow-Lab-Manager" // Replace with actual repo link
+    },
+    { 
+      name: "move wise", 
+      type: "JavaScript, Node.js (Express.js), Python, SQL, MySQL", 
+      image: moveWiseImg,
+      github: "https://github.com/aefehr/move-wise" // Replace with actual repo link
+    },
   ];
 
   return (
@@ -33,8 +48,11 @@ const Projects = () => {
         <h1 className="projects-title">Projects</h1>
         <div className="projects-list">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`projects-item ${hoveredProject?.name === project.name ? "hovered" : ""}`}
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
@@ -52,7 +70,7 @@ const Projects = () => {
               </span>
               <span className="project-name">{project.name}</span>
               <span className="project-type">{project.type}</span>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -61,6 +79,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
 
 
