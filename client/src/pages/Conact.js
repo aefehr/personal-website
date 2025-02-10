@@ -12,19 +12,19 @@ const Contact = () => {
                 <div className="contact-info">
                     <div className="contact-item">
                         <strong>MAIL</strong>
-                        <a href="mailto:fehr.allie@gmail.com" className="link" target="_blank" rel="noopener noreferrer">
+                        <a href="mailto:fehr.allie@gmail.com" className="contact-link" target="_blank" rel="noopener noreferrer">
                             <span className="arrow">↗</span> fehr.allie@gmail.com
                         </a>
                     </div>
                     <div className="contact-item">
                         <strong>GITHUB</strong>
-                        <a href="https://github.com/aefehr" className="link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/aefehr" className="contact-link" target="_blank" rel="noopener noreferrer">
                             <span className="arrow">↗</span> github.com/aefehr
                         </a>
                     </div>
                     <div className="contact-item">
                         <strong>LINKEDIN</strong>
-                        <a href="https://linkedin.com/in/allie-fehr" className="link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/in/allie-fehr" className="contact-link" target="_blank" rel="noopener noreferrer">
                             <span className="arrow">↗</span> linkedin.com/in/allie-fehr
                         </a>
                     </div>
