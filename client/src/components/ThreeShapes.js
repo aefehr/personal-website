@@ -5,7 +5,6 @@ const ThreeShapes = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    // Scene setup
     const scene = new THREE.Scene();
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
@@ -89,7 +88,6 @@ const ThreeShapes = () => {
       return group;
     };
 
-    // Create shapes with updated positioning
     const yellowDonut = createDonutWithCaps(2.7, 1.3, Math.PI, 100, yellow);
     yellowDonut.position.set(6, 5, 0);
     yellowDonut.rotation.z = Math.PI * -0.65;
@@ -143,14 +141,12 @@ const ThreeShapes = () => {
     const updateHoverAnimation = (object) => {
       if (object.userData.isAnimating) {
         const elapsed = Date.now() - object.userData.animationStartTime;
-        const duration = 1500; // Longer duration for smoother movement
+        const duration = 1500; 
         
         if (elapsed < duration) {
-          // Use smooth easing functions for gentler movement
           const progress = elapsed / duration;
           const ease = Math.sin(progress * Math.PI);
           
-          // Reduced movement amplitude
           const offsetX = Math.sin(elapsed * 0.005) * 0.05;
           const offsetY = Math.cos(elapsed * 0.005) * 0.05;
           const rotationOffset = Math.sin(elapsed * 0.005) * 0.02;
@@ -158,7 +154,7 @@ const ThreeShapes = () => {
           object.position.x = object.userData.originalPosition.x + (offsetX * ease);
           object.position.y = object.userData.originalPosition.y + (offsetY * ease);
           
-          if (object !== sphere) { // Don't rotate the sphere
+          if (object !== sphere) { 
             object.rotation.z = object.userData.originalRotation.z + (rotationOffset * ease);
           }
         } else {
