@@ -8,7 +8,7 @@
     min-height: 100vh;
     text-align: center;
     background-color: transparent;
-    margin-top: 0rem;
+    margin-top: -1.3rem;
   }
   
   .intro-heading {
@@ -41,18 +41,6 @@
   .name-highlight span {
     margin: 0 2px; 
   }
-
-  .underline-squiggle {
-    position: absolute;
-    z-index: 0;  
-    left: -10%;         
-    bottom: -50%;       
-    width: 120%;        
-    height: 100px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M0,4 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3 s 10,3,20,3 c 10,0,10,-3,20,-3'/%3E%3C/svg%3E") repeat-x center / auto 100%;
-    pointer-events: none;
-    opacity: 0.9; 
-}
 
   .intro-subheading {
     font-size: 1.20rem;
@@ -112,7 +100,7 @@
   }
   
   .link .arrow {
-    margin-right: -.2rem;
+    margin-right: .3rem;
     font-size: 1.2rem;
     display: inline-block; /* Ensures arrow is part of the link flow */
   }  

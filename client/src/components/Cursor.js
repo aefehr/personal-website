@@ -83,7 +83,7 @@ const Cursor = () => {
     // Reattach hover listeners every time the route changes
     const attachHoverListeners = () => {
       const links = document.querySelectorAll(
-        "a, .link, .link span, .intro-links a, .contact-info a, .contact-info .arrow, .nav-btn"
+        "a, .link, .link span, .intro-links a, .contact-info a, .contact-info .arrow, .nav-btn, .resume-link"
       );
 
       links.forEach((link) => {
