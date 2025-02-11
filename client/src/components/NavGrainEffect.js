@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from "react";
 
-const NavGrainEffect = () => {
+const NavGrainEffect = ({ isOpen }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext("2d");
     const SCALE = 1;
 
@@ -26,39 +28,50 @@ const NavGrainEffect = () => {
         data[i] = gray;
         data[i + 1] = gray;
         data[i + 2] = gray;
-        data[i + 3] = 20;
+        data[i + 3] = 15; // Reduced opacity even further for nav
       }
 
       ctx.putImageData(imageData, 0, 0);
     };
 
+    let animationFrameId;
     let frameCount = 0;
 
     const animate = () => {
       frameCount++;
-      if (frameCount % 1 === 0) {
+      if (frameCount % 2 === 0) { // Slightly slower update rate
         generateStatic();
       }
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    resizeCanvas();
-    animate();
+    if (isOpen) {
+      resizeCanvas();
+      animate();
+      window.addEventListener("resize", resizeCanvas);
+    }
 
-    window.addEventListener("resize", resizeCanvas);
-    return () => window.removeEventListener("resize", resizeCanvas);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [isOpen]);
 
   return (
     <canvas
-      id="navGrainCanvas"
       ref={canvasRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         top: 0,
         left: 0,
-        zIndex: 13, // Different z-index to be above nav menu but below about image
+        width: "100%",
+        height: "100%",
+        zIndex: 11, // Between nav menu (12) and main grain effect (10)
         pointerEvents: "none",
+        opacity: isOpen ? 1 : 0,
+        transition: "opacity 0.5s ease",
       }}
     />
   );

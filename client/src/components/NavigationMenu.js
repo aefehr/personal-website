@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationMenu.css';
+import NavGrainEffect from './NavGrainEffect';
 
 const NavigationMenu = ({ isOpen, onClose }) => {
   return (
     <nav className={`nav-menu ${isOpen ? 'active' : ''}`}>
-      
+      <NavGrainEffect isOpen={isOpen} />
       <Link to="/" className="nav-item" onClick={onClose}>
         <span className="nav-number">01</span>
         <span className="nav-text">HOME</span>
