@@ -36,7 +36,7 @@ const About = () => (
           <p className="about-description">
             Outside of class, I work as a peer Computer and Information Science tutor at UPenn.
             I'm also passionate about language learning and work part-time tutoring English to non-native speakers and practice my own
-            my own Spanish and Italian skills.
+            Spanish and Italian skills.
           </p>
         </div>
       </div>
