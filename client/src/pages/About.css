@@ -6,7 +6,7 @@
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
-  overflow: hidden; /* Prevent page-level scroll */
+  overflow: hidden; 
 }
 
 .about-container {
@@ -21,7 +21,6 @@
   flex-wrap: wrap;
 }
 
-/* Left Content */
 .about-content {
   flex: 1;
   min-width: 40%;
@@ -33,7 +32,6 @@
   flex-direction: column;
 }
 
-/* Header section that stays fixed */
 .header-section {
   padding-top: 25vh;
 }
@@ -52,11 +50,10 @@
   margin-bottom: .2rem;
 }
 
-/* Scrollable content section */
 .content-section {
   flex: 1;
   overflow-y: auto;
-  padding-right: 2rem; /* Add some padding for the scrollbar */
+  padding-right: 2rem; 
 }
 
 .about-description {
@@ -65,24 +62,24 @@
   font-family: 'Quicksand', serif;
   font-weight: 570;
   max-width: 85%;
-  margin-bottom: 1rem;
+  margin-bottom: -.5rem;
 }
 
-.link {
+.resume-link {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.2rem;
   line-height: 1.8;
-  margin-bottom: 40px;
+  margin-top: 1rem;
   font-family: 'Quicksand', serif;
   font-weight: 570;
   color: #606887;
   position: relative;
 }
 
-.link::after {
+.resume-link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -95,11 +92,14 @@
   font-weight: 570; 
 }
 
-.link:hover::after {
-  width: 100%;
+.resume-link:hover::after {
+  width: 14.5%;
 }
 
-/* Right Image Section */
+.resume-icon {
+  font-size: 1.2rem;
+}
+
 .about-image {
   position: sticky;
   top: 0;
@@ -118,7 +118,6 @@
   border-radius: 0 0 0 40px;
 }
 
-/* Media query for mobile responsiveness */
 @media (max-width: 768px) {
   .about-container {
     padding: 1rem;

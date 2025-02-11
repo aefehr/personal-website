@@ -6,18 +6,25 @@ import profileImg from '../assets/images/allie_profile_pic.png'
 const About = () => (
   <div className="about-page">
     <div className="about-container">
-      {/* Left Content */}
       <div className="about-content">
-        {/* Fixed header section */}
         <div className="header-section">
           <h1 className="about-title">ABOUT</h1>
           <div className="underline"></div>
         </div>
+
+        <a
+            href="/Allie_Fehr_Resume_Personal_Website.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-link"
+          >
+            <ArrowDownwardIcon className="resume-icon" />
+            <span className="text">resume</span>
+        </a>
         
-        {/* Scrollable content section */}
         <div className="content-section">
           <p className="about-description">
-            Hi, my name is <b>Allie Fehr</b>. I'm a Computer Science and Cognitive Science at the University of Pennsylvania, graduating in May 2025.
+            Hi, my name is Allie Fehr. I'm a Computer Science and Cognitive Science student at the University of Pennsylvania, graduating in May 2025.
           </p>
           <p className="about-description">
             My experience includes full-stack and frontend software engineering.
@@ -28,22 +35,12 @@ const About = () => (
           </p>
           <p className="about-description">
             Outside of class, I work as a peer Computer and Information Science tutor at UPenn.
-            I'm passionate about language learning and work part-time tutoring English to non-native speakers while also improving 
-            my own Spanish and Italian.
+            I'm also passionate about language learning and work part-time tutoring English to non-native speakers and practice my own
+            my own Spanish and Italian skills.
           </p>
-          <a
-            href="/path-to-your-resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-          >
-            <ArrowDownwardIcon className="resume-icon" />
-            <span className="text">resume</span>
-          </a>
         </div>
       </div>
 
-      {/* Right Image */}
       <div className="about-image">
         <img src={profileImg} alt="Allie Fehr" />
       </div>
