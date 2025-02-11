@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
@@ -8,8 +9,10 @@ import GrainEffect from './components/GrainEffect';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
 
-const App = () => (
-  <Router>
+const App = () => {
+  return (
+    <Router>
+      <PageTitleUpdater />
       <div>
         <Cursor />
         <Header />
@@ -20,8 +23,26 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <GrainEffect />
-    </div>  
-  </Router>
-);
+      </div>
+    </Router>
+  );
+};
+
+const PageTitleUpdater = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const titles = {
+      "/": "Home | Allie Fehr",
+      "/projects": "Projects | Allie Fehr",
+      "/about": "About | Allie Fehr",
+      "/contact": "Contact | Allie Fehr",
+    };
+
+    document.title = titles[location.pathname] || "Allie Fehr"; // Fallback title
+  }, [location]);
+
+  return null; 
+};
 
 export default App;
