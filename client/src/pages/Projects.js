@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Projects.css';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
 import budgetBuddyImg from '../assets/images/budget_buddy.png'
 import chopLabManagerImg from '../assets/images/chop_lab_manager.png'
 import moveWiseImg from '../assets/images/move_wise.png'
@@ -14,19 +13,19 @@ const Projects = () => {
       name: "budget buddy", 
       type: "TypeScript, React", 
       image: budgetBuddyImg,
-      github: "https://github.com/aefehr/budget-buddy" // Replace with actual repo link
+      github: "https://github.com/aefehr/budget-buddy" 
     },
     { 
       name: "chop lab manager", 
       type: "Python, SQLite, PySide", 
       image: chopLabManagerImg,
-      github: "https://github.com/aefehr/CHOP-Flow-Lab-Manager" // Replace with actual repo link
+      github: "https://github.com/aefehr/CHOP-Flow-Lab-Manager" 
     },
     { 
       name: "move wise", 
       type: "JavaScript, Node.js (Express.js), Python, SQL, MySQL", 
       image: moveWiseImg,
-      github: "https://github.com/aefehr/move-wise" // Replace with actual repo link
+      github: "https://github.com/aefehr/move-wise" 
     },
   ];
 
