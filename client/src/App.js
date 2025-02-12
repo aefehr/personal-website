@@ -8,6 +8,7 @@ import Contact from './pages/Conact';
 import GrainEffect from './components/GrainEffect';
 import Cursor from './components/Cursor';
 import Header from './components/Header';
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         </Routes>
         <GrainEffect />
       </div>
+      <Analytics />
     </Router>
   );
 };
